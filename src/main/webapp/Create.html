@@ -1,6 +1,7 @@
 <html>
 <head>
-<title>Design Blog</title>
+<title>Post New Title</title>
+<link rel="stylesheet" href="styles/bootstrap.css" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="css/landingstyle.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="scripts/jquery-2.1.3.js"></script>
@@ -25,6 +26,7 @@
 			<div id="left_column">
 				<div class="postbody">
 					<h1>POST Your Query</h1>
+					<br>
 				</div>
 			</div>
 		</div>
@@ -34,7 +36,7 @@
 			<b id="descriptiontag">Description:</b><textarea name="comments" id="description" ng-model="post.description"></textarea>
 			<div id="comment-button">
 			<br>
-			<input id="Submit-button" type="Button" value="Submit" ng-click="Submit(post)"/> 
+			<input ng-disabled="!(!!post.title && !!post.description )" id="Submit-button" type="Button" value="Submit" ng-click="Submit(post)"/> 
 			</div>
 		</form>
 	</div>

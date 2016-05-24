@@ -44,7 +44,8 @@
 		$scope.Users = {};
 		$scope.loginDisplay = true;
 		
-		$scope.Login = function() {
+		$scope.Login = function(value) {
+			$scope.data = value;
 			console.log("inside login");
 			var formGet = $http.get(
 					'blog/user/check/shhv',
@@ -60,15 +61,15 @@
 			
 		}
 
-		$scope.Reg = function() {
+		$scope.Reg = function(value) {
+			$scope.User = value;
 			console.log("inside register");
 			var formPost = $http.post(
 					'blog/user/create',
-					$scope.Users).success(function(data) {
+					$scope.User).success(function(data) {
 				console.log(data);
-				//$scope.users.push(angular.copy($scope.user));
-				//$scope.Users.push($scope.User);
 				$scope.form = false;
+				$location.url('/');
 			});
 		};
 
