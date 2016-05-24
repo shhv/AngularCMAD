@@ -49,7 +49,7 @@
 				<textarea name="title" id="value" style="display: none;"
 					ng-model="comment.id">{{data.id}}</textarea>
 				<div id="comment-button">
-					<br> <input ng-disabled="!(!!comment.value && !!comment.id )" ng-click="Submit(comment)" type="submit" value="Submit" />
+					<br> <input ng-disabled="!(!!comment.value)" ng-click="Submit(comment)" type="submit" value="Submit" />
 				</div>
 			</form>
 		</div>

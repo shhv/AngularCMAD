@@ -45,7 +45,7 @@ $(function() {
 					login</div>
 				<input type="text" id="login-text" placeholder="Email" ng-model="login.email"/> <input
 					type="password" id="login-pass" placeholder="Password"  ng-model="login.password"/> 
-				<input ng-disabled="!(!!login.email && !!login.password )" ng-click="Login(login)" name="login" value="Login" id="login-button" />
+				<input ng-disabled="!(!!login.email && !!login.password )" ng-click="Login(login)" name="login" type="submit" value="Login" id="login-button" />
 			</div>
 			<!-- end login-wrapper div -->
 			<div id="reg-wrapper" ng-style="myStyleRegWrapper">
@@ -57,7 +57,7 @@ $(function() {
 					type="text" id="signup-text" placeholder="email" ng-model="login.email" /> <input
 					type="password" id="signup-pass" placeholder="Password" ng-model="login.password" /> 
 					<input ng-disabled="!(!!login.email && !!login.password && !!login.name)"
-					ng-click="Reg(login)" name="Signup" value="Sign Up" id="signup-button" />
+					ng-click="Reg(login)" name="Signup" type="submit" value="Sign Up" id="signup-button" />
 			</div>
 			<!-- end reg-wrapper div -->
 		</div>
