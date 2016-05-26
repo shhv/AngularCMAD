@@ -6,8 +6,6 @@
 <link rel="stylesheet" type="text/css" href="css/initial.css" />
 <link rel="stylesheet" type="text/css" href="css/basics.css" />
 <script type="text/javascript" src="scripts/jquery-2.1.3.js"></script>
-<script src="js/comment.js"></script>
-<script src="js/bloggers.js"></script>
 <style>
 .dotted {
 	text-decoration: none;
@@ -49,8 +47,10 @@
 				<textarea name="title" id="value" style="display: none;"
 					ng-model="comment.id">{{data.id}}</textarea>
 				<div id="comment-button">
-					<br> <input ng-disabled="!(!!comment.value)" ng-click="Submit(comment)" type="submit" value="Submit" />
+					<br> <input ng-disabled="!(!!comment.value)"
+						ng-click="Submit(comment)" type="submit" value="Submit" />
 				</div>
+
 			</form>
 		</div>
 	</div>

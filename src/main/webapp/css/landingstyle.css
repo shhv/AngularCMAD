@@ -58,7 +58,7 @@ img {
 }
 
 #container {
-	margin: 0px auto;
+	margin: 0% auto;
 	width: 900px;
 }
 
@@ -101,18 +101,18 @@ img {
 }
 
 #menu ul {
-	margin: 0px;
+	margin: 0%;
 	padding: 18px 20px 0px 0px;
 	list-style: none;
 }
 
 #menu ul li {
-	margin: 0px;
+	margin: 0%;
 	display: inline;
 }
 
 #menu ul li a {
-	margin: 0px;
+	margin: 0%;
 	padding: 0px 20px 0px 0px;
 	font: 14px arial;
 	font-weight: bold;
@@ -129,7 +129,7 @@ img {
 /* ----------------- Content ----------------------- */
 #content {
 	float: left;
-	margin: 0px;
+	margin: 0%;
 	width: 900px;
 	background: #c3b595 url(images/content_bg.jpg) no-repeat;
 }
@@ -425,5 +425,30 @@ input {
 
 .tfclear {
 	clear: both;
+}
+
+/* Tablet Landscape */
+@media screen and (max-width: 1060px) {
+    #primary { width:67%; }
+    #secondary { width:30%; margin-left:3%;}  
+}
+/* Tabled Portrait */
+@media screen and (max-width: 768px) {
+    #primary { width:100%; }
+    #secondary { width:100%; margin:0; border:none; }
+}
+
+img { max-width: 100%; }
+
+@media (min-device-width:600px) {
+    img[data-src-600px] {
+        content: attr(data-src-600px, url);
+    }
+}
+
+@media (min-device-width:800px) {
+    img[data-src-800px] {
+        content: attr(data-src-800px, url);
+    }
 }
 /* </style> */

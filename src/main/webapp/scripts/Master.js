@@ -113,7 +113,7 @@
 		};
 		
 		$scope.HomeNav = function() {
-			console.log("inside create");
+			console.log("inside Home");
 			$location.url('/Welcome');
 		};
 		$scope.Logout = function() {
@@ -137,7 +137,7 @@
 		console.log("insode BloggersController");
 	}]);
 	
-	app.controller('WelcomeController', ['$scope','$http','$log','$location','sharedProperties', function($scope,$http,$log,$location, sharedProperties) {
+	app.controller('WelcomeController', ['$scope','$http','$log','$location','sharedProperties','$route', function($scope,$http,$log,$location, sharedProperties, $route) {
 		$scope.loginDisplay = false;
 		console.log("inside WelcomeController");
 		$scope.titles = [];
@@ -162,6 +162,19 @@
 			console.log($scope.value.id);
 			sharedProperties.setProperty($scope.value.id);
 			$location.url('/Bloggers');
+			
+		};
+		
+		$scope.Search = function(value) {
+			$scope.title = value;
+			console.log("inside Search");
+			var formGet = $http.get(
+					'blog/user/titles',
+					$scope.title).success(function(data) {
+				console.log(data);
+				$scope.titles = data;
+				$route.reload();
+			});
 			
 		};
 		
