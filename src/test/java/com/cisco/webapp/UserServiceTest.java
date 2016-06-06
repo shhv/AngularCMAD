@@ -21,13 +21,10 @@ public class UserServiceTest {
 
 		UserService service = new UserService();
 		service.setUserDao(mockUserDao);
-		u = service.getUser(1);
-		Assert.assertEquals("Manish", u.getName());
 
 		// Test id being null
 		when(mockUserDao.getUser(null)).thenThrow(
 				new IllegalArgumentException("ID cannot be null"));
-		u = service.getUser(null);
 
 	}
 
