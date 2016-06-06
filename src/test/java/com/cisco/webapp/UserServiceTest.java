@@ -11,7 +11,7 @@ import com.cisco.doa.UserDao;
 
 public class UserServiceTest {
 
-	@Test(expected = IllegalArgumentException.class)
+	@Test
 	public void testGetUser() {
 		// Test valid id
 		UserDao mockUserDao = mock(UserDao.class);
