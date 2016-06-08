@@ -124,6 +124,27 @@ img {
 	color: #cccccc;
 }
 
+
+#section {
+	clear: both;
+	margin: 0px;
+	padding: 10px;
+	width: 1900px;
+	height: 42px;
+	text-align: left;
+} 
+
+#section ul {
+	margin: 0%;
+	padding: 18px 80px 0px 0px;
+	list-style: none;
+	float: inherit;
+}
+
+#section ul li {
+	margin: 0%;
+	display: inline;
+}
 /* ---------- End of Menu ------------- */
 
 /* ----------------- Content ----------------------- */
@@ -274,6 +295,7 @@ img {
 
 .section ul li {
 	display: block;
+	float: left;
 }
 
 .section ul li a {
@@ -310,17 +332,60 @@ img {
 	width: 570px;
 	text-align: right;
 	padding: 5px 0px 5px 0px;
+	padding-left: 9em;
 	font-size: 11px;
 	font-weight: bold;
-	background: url(images/comment_icon.gif) left center no-repeat;
-	border: 2px dotted #ff0000; border-style: none none dotted; 
+	background: left center no-repeat;
+	/* border: 2px dotted #ff0000; border-style: none none dotted;  */
 }
 
+.postDate {
+	clear: both;
+	margin: 10px 0px 0px 0px;
+	width: 570px;
+	text-align: right;
+	padding: 5px 0px 5px 0px;
+	padding-right: 12em;
+	font-size: 11px;
+	font-weight: bold;
+	background: left center no-repeat;
+	/* border: 2px dotted #ff0000; border-style: none none dotted; */ 
+}
+
+.deleteTitle {
+	clear: both;
+	margin: 10px 0px 0px 0px;
+	width: 570px;
+	text-align: right;
+	padding: 5px 0px 5px 0px;
+	padding-right: 8em;
+	font-size: 11px;
+	font-weight: bold;
+	text-decoration: underline;
+	background: left center no-repeat;
+	color: #804000;
+	/* border: 2px dotted #ff0000; border-style: none none dotted; */ 
+}
+
+.postDateA {
+	clear: both;
+	margin: 10px 0px 0px 0px;
+	width: 570px;
+	text-align: right;
+	padding: 5px 0px 5px 0px;
+	padding-right: 8em;
+	padding-right: 4em;
+	font-size: 11px;
+	font-weight: bold;
+	background: left center no-repeat;
+	/* border: 2px dotted #ff0000; border-style: none none dotted; */ 
+}
 .comment a {
 	padding: 5px 0px 5px 0px;
 	font-size: 11px;
 	font-weight: bold;
-	background: url(images/comment_icon.gif) left center no-repeat;
+	padding-left: 4em;
+	background: left center no-repeat;
 }
 /* ----- End of Post ------ */
 

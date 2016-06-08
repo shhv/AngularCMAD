@@ -19,9 +19,7 @@ blockquote, ul, ol, dl, address {
 
 /* Apply left margin:
    Only to the few elements that need it: */
-li, dd, blockquote {
-	margin-left: 0em;
-}
+
 
 /* Miscellaneous conveniences: */
 form label {

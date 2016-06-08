@@ -33,7 +33,8 @@
 				</div>
 				<div id="content">
 					<div id="left_column">
-						<div class="postbody" id="templates" ng-repeat="t in titles" ng-hide="!(!!t.title && !!t.description || !!t.value )">
+						<div class="postbody" id="templates" ng-repeat="t in titles"
+							ng-hide="!(!!t.title && !!t.description || !!t.value )">
 							<div>
 								<h1>
 									<a id="Content" ng-click="Blog(t)">{{t.title}}</a>
@@ -41,15 +42,24 @@
 								</br>
 							</div>
 							<p>{{t.description}}</p>
-							<div class="comment">Comments({{t.value}})</div>
+							<div id="section">
+								<ul>
+									<li class="deleteTitle" ng-click="Delete(t)">Delete</li>
+									<li class="postDate">26/4/2015</li>
+									<li class="postDateA">author</li>
+									<li class="comment">Comments({{t.value}})</li>
+								</ul>
+							</div>
+
 						</div>
 					</div>
 					<div id="right_column">
 						<div class="postbody">
 							<form id="tfnewsearch">
 								<input type="text" id="tfq2b" class="tftextinput2" name="q"
-									size="21" maxlength="120" value="Search our website" ng-model="field.title"> 
-									<input type="submit" value=">" class="tfbutton2" ng-click="Search(field)">
+									size="21" maxlength="120" value="Search our website"
+									ng-model="field.title"> <input type="submit" value=">"
+									class="tfbutton2" ng-click="Search(field)">
 							</form>
 						</div>
 						<div class="tfclear"></div>

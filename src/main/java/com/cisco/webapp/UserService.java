@@ -11,7 +11,9 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
@@ -32,13 +34,14 @@ UserDao dao = new UserDao();
 	@GET
 	@Path("check/{param}")
 	@Produces({MediaType.APPLICATION_JSON})
-	public Users getUser(@PathParam("param") String param) {
+	public Response getUser(@PathParam("param") String param) {
 		System.out.println("check if : "+param+ " exists\n" );
 		Users newUser = new Users();
 		newUser.setEmailId("shhvemail");
 		newUser.setName("shhv");
 		newUser.setPassword("shhvpassword");
-		return newUser;
+		return Response.status(Response.Status.OK).type(MediaType.APPLICATION_JSON).build();
+		//return Response.status(Response.Status.UNAUTHORIZED).type(MediaType.APPLICATION_JSON).build();
 	}
 	
 	
@@ -128,10 +131,11 @@ UserDao dao = new UserDao();
 	
 	
 	@POST
-	@Path("/create")
+	@Path("/register")
 	@Consumes(MediaType.APPLICATION_JSON)
 	//public void createUser(@FormParam("name") String name,@FormParam("age") Integer age,@FormParam("emailId") String emailId){
 	public void createUser(Users u){
+		System.out.println(u);
 		System.out.println("Creating user: "+u.getName());
 	}
 	
@@ -181,20 +185,39 @@ UserDao dao = new UserDao();
 	}
 	
 	@DELETE
-	@Path("/{param}")
+	@Path("delete")
 	@Produces({MediaType.APPLICATION_JSON})
-	public boolean deleteUser(@PathParam("param") Integer id) {
+	public boolean deleteUser(@QueryParam("id") Integer id) {
 		System.out.println("Deleting user: "+id);
-		Session ses = HibernateUtil.currentSession();
-		try {
-			Transaction tx = ses.beginTransaction();
-			Users u = (Users) ses.load(Users.class, id);
-			ses.delete(u);
-			tx.commit();
-			return true;
-		} finally {
-			HibernateUtil.closeSession();
-		}
+//		Session ses = HibernateUtil.currentSession();
+//		try {
+//			Transaction tx = ses.beginTransaction();
+//			Users u = (Users) ses.load(Users.class, id);
+//			ses.delete(u);
+//			tx.commit();
+//			return true;
+//		} finally {
+//			HibernateUtil.closeSession();
+//		}
+		return true;
+	}
+	
+	@DELETE
+	@Path("comment/delete")
+	@Produces({MediaType.APPLICATION_JSON})
+	public boolean deletecomment(@QueryParam("id") Integer id) {
+		System.out.println("Deleting comment: "+id);
+//		Session ses = HibernateUtil.currentSession();
+//		try {
+//			Transaction tx = ses.beginTransaction();
+//			Users u = (Users) ses.load(Users.class, id);
+//			ses.delete(u);
+//			tx.commit();
+//			return true;
+//		} finally {
+//			HibernateUtil.closeSession();
+//		}
+		return true;
 	}
 	
 }

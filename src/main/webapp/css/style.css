@@ -99,8 +99,26 @@ a {
 #info {
 	width: 360px;
 	margin-left: 20px;
-	margin-top: -15px;
+	margin-top: 10px;
 	color: #c3b595;
+	font-size: 13px;
+}
+
+
+#infoReg {
+	width: 360px;
+	margin-left: 20px;
+	margin-top: -18px;
+	color: #c3b595;
+	font-size: 13px;
+}
+
+
+#loginError {
+	width: 360px;
+	margin-left: 20px;
+	margin-top: -15px;
+	color: #ff6666;
 	font-size: 13px;
 }
 
