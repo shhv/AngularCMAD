@@ -57,6 +57,7 @@
 		$scope.Users = {};
 		$scope.loginDisplay = true;
 		$scope.loginerror= false;
+		$scope.Regerror= false;
 		
 		$scope.Login = function(value) {
 			$scope.data = value;
@@ -92,6 +93,12 @@
 				console.log(data);
 				$scope.form = false;
 				$location.url('/');
+			}).error (function(data, status, headers, config){
+				console.log(status);
+				if(status==409) {
+					$scope.Regerror= true;
+				} 
+				
 			});
 		};
 
@@ -150,8 +157,8 @@
 		
 		$scope.Delete = function(value) {
 			$scope.value = value;
-			console.log("delete function");
-			var formGet = $http.delete('blog/user/comment/delete?id='+ 4)
+			console.log("delete function : "+ value);
+			var formGet = $http.delete('blog/user/comment/delete?id='+ value)
 			   .then(
 				       function(response){
 				         console.log("success");
@@ -314,6 +321,7 @@
 		$scope.Submit = function(value) {
 			$scope.data = value;
 			$scope.token = sharedToken.gettoken();
+			$scope.data.postTags = $scope.token;
 			console.log($scope.token);
 			//for authenticating user
 			$http.defaults.headers.common['Authorization'] = 'Bearer ' + $scope.token;

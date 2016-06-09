@@ -205,7 +205,7 @@ UserDao dao = new UserDao();
 	@DELETE
 	@Path("comment/delete")
 	@Produces({MediaType.APPLICATION_JSON})
-	public boolean deletecomment(@QueryParam("id") Integer id) {
+	public boolean deletecomment(@QueryParam("id") String id) {
 		System.out.println("Deleting comment: "+id);
 //		Session ses = HibernateUtil.currentSession();
 //		try {
